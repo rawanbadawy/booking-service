@@ -1,0 +1,45 @@
+{
+    "name": "booking-service",
+    "version": "1.0.0",
+    "description": "Booking Microservice for Carpooling System",
+    "main": "dist/main.js",
+    "scripts": {
+        "prebuild": "chmod -R 755 node_modules/.bin",
+        "start": "nest start",
+        "start:dev": "nest start --watch",
+        "build": "nest build",
+        "format": "prettier --write \"src/**/*.ts\"",
+        "lint": "eslint . --ext .ts",
+        "prisma:generate": "prisma generate",
+        "prisma:migrate": "prisma migrate dev",
+        "prisma:studio": "prisma studio"
+    },
+    "dependencies": {
+        "@nestjs-plus/rabbitmq": "^1.4.4",
+        "@nestjs/apollo": "^13.0.4",
+        "@nestjs/common": "^11.0.13",
+        "@nestjs/core": "^11.0.13",
+        "@nestjs/cqrs": "^11.0.3",
+        "@nestjs/graphql": "^13.0.4",
+        "@nestjs/microservices": "^11.0.16",
+        "@nestjs/platform-express": "^11.0.13",
+        "@prisma/client": "^6.7.0",
+        "amqplib": "^0.10.7",
+        "apollo-server-express": "^3.13.0",
+        "graphql": "^16.10.0",
+        "rxjs": "^7.8.1"
+    },
+    "devDependencies": {
+        "@nestjs/cli": "^10.0.0",
+        "@nestjs/schematics": "^10.0.0",
+        "@nestjs/testing": "^11.0.13",
+        "@types/amqplib": "^0.10.7",
+        "@types/node": "^20.0.0",
+        "eslint": "^8.0.0",
+        "prettier": "^3.0.0",
+        "prisma": "^6.7.0",
+        "ts-loader": "^9.0.0",
+        "ts-node": "^10.0.0",
+        "typescript": "^5.8.3"
+    }
+}

@@ -1,0 +1,47 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Booking {
+  id: ID!
+  rideId: String!
+  passengerId: String!
+  status: BookingStatus!
+  bookedAt: DateTime!
+}
+
+enum BookingStatus {
+  CONFIRMED
+  CANCELLED
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  getBookings: [Booking!]!
+  getBookingById(id: String!): Booking
+  getBookingsByPassengerId(passengerId: String!): [Booking!]!
+  getBookingsByRideId(rideId: String!): [Booking!]!
+}
+
+type Mutation {
+  createBooking(data: CreateBookingInput!): Booking!
+  updateBooking(id: String!, data: UpdateBookingInput!): Booking!
+  deleteBooking(id: String!): Booking!
+}
+
+input CreateBookingInput {
+  rideId: String!
+  passengerId: String!
+  status: BookingStatus!
+}
+
+input UpdateBookingInput {
+  rideId: String
+  passengerId: String
+  status: BookingStatus
+  bookedAt: DateTime
+}
